@@ -1,5 +1,12 @@
 package org.costr.railroad_ink;
 
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author costr
@@ -15,6 +22,30 @@ public class GUI1 {
     }
 
     public void initialize() {
-        // Initialize GUI components here
+        JFrame frame = new JFrame("Railroad Ink");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new java.awt.Dimension(800, 600));
+        frame.setResizable(true);
+        frame.pack(); // Pack the frame to fit the preferred size
+        frame.setLocationRelativeTo(null); // Center the window on the screen
+        frame.setLayout(new java.awt.BorderLayout());
+        JPanel bildpanel = new JPanel();
+        bildpanel.setLayout(new BoxLayout(bildpanel, BoxLayout.X_AXIS));
+
+        // Add components to the frame
+        JButton button = new JButton("würfeln");
+        frame.add(button, java.awt.BorderLayout.SOUTH);
+        button.addActionListener(e -> {
+            // Clear the panel before adding new images
+            bildpanel.removeAll();
+            bildpanel.revalidate();
+            bildpanel.repaint();
+
+            // Call the method to roll the dice
+            Feld rolledField = new Railroad_Ink().würfen();
+            bildpanel.add(new JLabel(new ImageIcon(new Feld(1).getImage())));
+        });
+
+        frame.setVisible(true);
     }
 }
