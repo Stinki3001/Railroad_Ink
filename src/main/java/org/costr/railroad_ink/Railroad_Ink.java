@@ -1,3 +1,9 @@
+package org.costr.railroad_ink;
+
+/**
+ *
+ * @author costr
+ */
 
 // import java.util.ArrayList;
 import java.util.Random;

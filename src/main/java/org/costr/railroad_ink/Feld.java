@@ -1,3 +1,9 @@
+package org.costr.railroad_ink;
+
+/**
+ *
+ * @author costr
+ */
 public class Feld {
 
     private int id;
