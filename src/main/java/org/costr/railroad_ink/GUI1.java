@@ -44,7 +44,12 @@ public class GUI1 {
             bildpanel.repaint();
 
             // Call the method to roll the dice
-            Feld rolledField = new Railroad_Ink().würfen();
+            try {
+                Feld rolledField = new Railroad_Ink().würfen();
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
             try {
                 bildpanel.add(new JLabel(new ImageIcon(new Feld(1).getImage())));
             } catch (IOException ex) {
