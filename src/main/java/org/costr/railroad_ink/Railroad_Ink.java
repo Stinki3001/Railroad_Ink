@@ -15,7 +15,7 @@ public class Railroad_Ink {
     public Feld würfen() {
         Random ran = new Random();
         int index = ran.nextInt(Feld.ANZ_FELDER);
-        return new Feld().Feld(index);
+        return new Feld(index);
     }
 
     Railroad_Ink() {
