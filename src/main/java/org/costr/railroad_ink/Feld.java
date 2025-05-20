@@ -18,7 +18,7 @@ public class Feld {
     public static final int ANZ_FELDER = 9;
 
     @SuppressWarnings("OverridableMethodCallInConstructor")
-    Feld(int index) {
+    Feld(int index) throws IOException {
         Feld1(index);
     }
 
