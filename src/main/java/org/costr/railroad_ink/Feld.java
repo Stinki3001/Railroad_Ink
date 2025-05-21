@@ -1,6 +1,7 @@
 package org.costr.railroad_ink;
 
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -46,7 +47,8 @@ public class Feld {
         feld.id = 0;
         feld.name = "ZugKurve";
 
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-1.JPG"));
+        feld.image = ImageIO.read(
+                new File("C:\\Users\\costr\\Desktop\\Prgrammieren\\Railroad_Ink\\src\\main\\resources\\number-1.JPG"));
 
         return feld;
     }
@@ -55,7 +57,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 1;
         feld.name = "ZugKreuzung";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-2.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Zug_Kreuzung.JPG"));
         return feld;
     }
 
@@ -63,7 +65,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 2;
         feld.name = "ZugGerade";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-3.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Zug_Gerade.JPG"));
         return feld;
     }
 
@@ -71,7 +73,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 3;
         feld.name = "StraßeKurve";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-4.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Straße_Kurve.JPG"));
         return feld;
     }
 
@@ -79,7 +81,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 4;
         feld.name = "StraßeKreuzung";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-5.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Straße_Kreuzung.JPG"));
         return feld;
     }
 
@@ -87,15 +89,15 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 5;
         feld.name = "StraßeGerade";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-6.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Straße_Gerade.JPG"));
         return feld;
     }
 
     private Feld StraßeMitBrücke() throws IOException {
         Feld feld = new Feld();
         feld.id = 6;
-        feld.name = "Straße mit ZugBrücke";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-7.JPG"));
+        feld.name = "Straße mit Brücke";
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Straße_mit_Brücke.JPG"));
         return feld;
     }
 
@@ -103,7 +105,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 7;
         feld.name = "BahnhofGerade";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-8.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Bahnhof_Gerade.JPG"));
         return feld;
     }
 
@@ -111,7 +113,7 @@ public class Feld {
         Feld feld = new Feld();
         feld.id = 8;
         feld.name = "BahnhofKurve";
-        feld.image = ImageIO.read(getClass().getResourceAsStream("number-9.JPG"));
+        feld.image = ImageIO.read(getClass().getResourceAsStream("Bahnhof_Kurve.JPG"));
         return feld;
     }
 
