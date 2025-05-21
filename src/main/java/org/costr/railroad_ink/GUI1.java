@@ -1,5 +1,6 @@
 package org.costr.railroad_ink;
 
+import java.awt.Image;
 import java.io.IOException;
 
 import javax.swing.BoxLayout;
@@ -45,16 +46,15 @@ public class GUI1 {
 
             // Call the method to roll the dice
             try {
-                Feld rolledField = new Railroad_Ink().würfen();
-            } catch (IOException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
-            try {
-                bildpanel.add(new JLabel(new ImageIcon(new Feld(1).getImage())));
+                Feld rolledField = new Feld(1);
+                Image image = rolledField.getImage();
+                JLabel label = new JLabel(new ImageIcon(image));
+                bildpanel.add(label);
+                bildpanel.revalidate();
             } catch (IOException ex) {
             }
         });
+        frame.add(bildpanel, java.awt.BorderLayout.CENTER);
 
         frame.setVisible(true);
     }
