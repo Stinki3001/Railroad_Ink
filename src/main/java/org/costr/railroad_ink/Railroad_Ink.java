@@ -16,7 +16,9 @@ public class Railroad_Ink {
     public Feld würfen() throws IOException {
         Random ran = new Random();
         int index = ran.nextInt(Feld.ANZ_FELDER);
-        return new Feld(index);
+        Feld feld = new Feld(index);
+        System.out.println("Feld: " + feld.getName());
+        return feld;
     }
 
     Railroad_Ink() {
