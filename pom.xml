@@ -3,7 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.costr.railroad-ink</groupId>
     <artifactId>Railroad-Ink</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <!-- Versionsname -->
+    <version>1.1-STABLE</version>
     <build>
         <plugins>
             <plugin>
@@ -14,6 +15,19 @@
                     <compilerArgs>
                         <arg>--enable-preview</arg>
                     </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.costr.railroad_ink.GUI1</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>

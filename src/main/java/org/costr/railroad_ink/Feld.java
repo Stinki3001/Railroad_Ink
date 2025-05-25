@@ -1,7 +1,6 @@
 package org.costr.railroad_ink;
 
 import java.awt.Image;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -45,68 +44,57 @@ public class Feld {
     }
 
     private void ZugKurve() throws IOException {
-
         this.id = 0;
         this.name = "ZugKurve";
-
-        this.image = ImageIO.read(
-                new File(getClass().getResource("/Zug_Kurve.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Zug_Kurve.JPG"));
     }
 
     private void ZugKreuzung() throws IOException {
         this.id = 1;
         this.name = "ZugKreuzung";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Zug_Kreuzung.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Zug_Kreuzung.JPG"));
     }
 
     private void ZugGerade() throws IOException {
         this.id = 2;
         this.name = "ZugGerade";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Zug_Gerade.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Zug_Gerade.JPG"));
     }
 
     private void StraßeKurve() throws IOException {
         this.id = 3;
         this.name = "StraßeKurve";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Strasse_Kurve.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Strasse_Kurve.JPG"));
     }
 
     private void StraßeKreuzung() throws IOException {
         this.id = 4;
         this.name = "StraßeKreuzung";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Strasse_Kreuzung.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Strasse_Kreuzung.JPG"));
     }
 
     private void StraßeGerade() throws IOException {
         this.id = 5;
         this.name = "StraßeGerade";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Strasse_Gerade.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Strasse_Gerade.JPG"));
     }
 
     private void StraßeMitBrücke() throws IOException {
         this.id = 6;
         this.name = "Straße mit Brücke";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Strasse_Mit_Bruecke.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Strasse_Mit_Bruecke.JPG"));
     }
 
     private void BahnhofGerade() throws IOException {
         this.id = 7;
         this.name = "BahnhofGerade";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Bahnhof_Gerade.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Bahnhof_Gerade.JPG"));
     }
 
     private void BahnhofKurve() throws IOException {
         this.id = 8;
         this.name = "BahnhofKurve";
-        this.image = ImageIO.read(new File(
-                getClass().getResource("/Bahnhof_Kurve.JPG").getFile()));
+        this.image = ImageIO.read(getClass().getResourceAsStream("/Bahnhof_Kurve.JPG"));
     }
 
     public int getId() {
