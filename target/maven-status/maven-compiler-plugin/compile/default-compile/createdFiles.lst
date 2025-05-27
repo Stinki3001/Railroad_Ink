@@ -1,5 +1,7 @@
+org\costr\railroad_ink\MP3Player.class
 org\costr\railroad_ink\Railroad_Ink.class
 org\costr\railroad_ink\ImagePanel.class
 org\costr\railroad_ink\GUI1.class
 org\costr\railroad_ink\Feld.class
+org\costr\railroad_ink\Railroad_Ink$RailroadMusicThread.class
 org\costr\railroad_ink\Würfel.class

@@ -19,6 +19,8 @@ public class GUI1 {
 
     public static void main(String[] args) {
         // Create a new game instance
+        Railroad_Ink game = new Railroad_Ink();
+        game.init();
 
         GUI1 gui = new GUI1();
         gui.initialize();
