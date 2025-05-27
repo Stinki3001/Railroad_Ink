@@ -9,21 +9,38 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+
 /**
  *
  * @author costr
  */
-
+@SpringBootApplication
 public class GUI1 {
     Railroad_Ink game = new Railroad_Ink();
 
     public static void main(String[] args) {
-        // Create a new game instance
-        Railroad_Ink game = new Railroad_Ink();
-        game.init();
+        System.setProperty("java.awt.headless", "false");
+        SpringApplication.run(GUI1.class, args);
 
-        GUI1 gui = new GUI1();
-        gui.initialize();
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+        return args -> {
+
+            // Create a new game instance
+            Railroad_Ink game = new Railroad_Ink();
+            game.init();
+
+            GUI1 gui = new GUI1();
+            gui.initialize();
+
+        };
     }
 
     public void initialize() {
