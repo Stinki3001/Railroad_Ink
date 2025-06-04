@@ -11,7 +11,7 @@ public class Railroad_Ink {
     Würfel wuerfel1;
 
     Würfel wuerfel2;
-    private int round;
+    private int round = 1;
 
     Railroad_Ink() {
 

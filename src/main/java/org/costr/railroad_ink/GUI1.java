@@ -65,6 +65,8 @@ public class GUI1 {
         frame.add(textArea, java.awt.BorderLayout.NORTH);
         JButton button = new JButton("würfeln");
         frame.add(button, java.awt.BorderLayout.SOUTH);
+
+        // Add the button action listener
         button.addActionListener(e -> {
             game.setRound(game.getRunde() + 1);
             textArea.setText("Runde: " + game.getRunde());
@@ -72,7 +74,6 @@ public class GUI1 {
             bildpanel.removeAll();
             bildpanel.revalidate();
             bildpanel.repaint();
-            textArea.setText("Würfeln...");
 
             try {
                 for (int i = 0; i < 3; i++) {
