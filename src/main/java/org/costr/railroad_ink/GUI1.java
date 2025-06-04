@@ -8,6 +8,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +22,7 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 public class GUI1 {
-    Railroad_Ink game = new Railroad_Ink();
+    Railroad_Ink game;
 
     public static void main(String[] args) {
         System.setProperty("java.awt.headless", "false");
@@ -34,13 +35,16 @@ public class GUI1 {
         return args -> {
 
             // Create a new game instance
-            Railroad_Ink game = new Railroad_Ink();
-            game.init();
 
             GUI1 gui = new GUI1();
             gui.initialize();
 
         };
+    }
+
+    GUI1() throws IOException {
+        game = new Railroad_Ink();
+        game.init();
     }
 
     public void initialize() {
@@ -55,21 +59,36 @@ public class GUI1 {
         bildpanel.setLayout(new BoxLayout(bildpanel, BoxLayout.X_AXIS));
 
         // Add components to the frame
+
+        JTextArea textArea = new JTextArea("Runde: " + game.getRunde());
+        textArea.setEditable(false);
+        frame.add(textArea, java.awt.BorderLayout.NORTH);
         JButton button = new JButton("würfeln");
         frame.add(button, java.awt.BorderLayout.SOUTH);
         button.addActionListener(e -> {
+            game.setRound(game.getRunde() + 1);
+            textArea.setText("Runde: " + game.getRunde());
+            // Clear the bildpanel and revalidate it before adding new images
             bildpanel.removeAll();
             bildpanel.revalidate();
             bildpanel.repaint();
+            textArea.setText("Würfeln...");
 
             try {
-                for (int i = 0; i < 4; i++) {
-                    Feld feld = game.würfen();
+                for (int i = 0; i < 3; i++) {
+                    Feld feld = game.wuerfel1.würfeln();
                     ImagePanel imgPanel = new ImagePanel(feld.getImage());
                     imgPanel.setPreferredSize(new java.awt.Dimension(
                             bildpanel.getWidth() / 4, bildpanel.getHeight()));
                     bildpanel.add(imgPanel);
                 }
+
+                Feld feld = game.wuerfel2.würfeln();
+                ImagePanel imgPanel = new ImagePanel(feld.getImage());
+                imgPanel.setPreferredSize(new java.awt.Dimension(
+                        bildpanel.getWidth() / 4, bildpanel.getHeight()));
+                bildpanel.add(imgPanel);
+
                 bildpanel.revalidate();
                 bildpanel.repaint();
             } catch (IOException ex) {

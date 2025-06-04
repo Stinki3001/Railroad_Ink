@@ -1,20 +1,25 @@
 package org.costr.railroad_ink;
 
-/**
- *
- * @author costr
- */
-
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Würfel {
 
-    private int anzahlSeiten;
-    private ArrayList<String> möglichkeiten;
+    private int anzSeiten;
+    private ArrayList<Feld> möglichkeiten;
 
-    public Würfel(ArrayList<String> moglichkeiten) {
+    public Würfel(ArrayList<Feld> moglichkeiten) {
         this.möglichkeiten = moglichkeiten;
-        this.anzahlSeiten = 6;
+        this.anzSeiten = 6;
+    }
+
+    public Feld würfeln() throws IOException {
+        Random ran = new Random();
+        int index = ran.nextInt(anzSeiten);
+        Feld feld = möglichkeiten.get(index);
+        System.out.println("Feld: " + feld.getName());
+        return feld;
     }
 
 }
